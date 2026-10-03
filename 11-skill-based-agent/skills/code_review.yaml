@@ -1,0 +1,4 @@
+name: code_review
+description: Review code for bugs and improvements
+prompt_template: "Review this code and suggest improvements:\n{input}"
+output_format: markdown

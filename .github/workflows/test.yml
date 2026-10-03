@@ -1,0 +1,49 @@
+name: "Test Projects"
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Python 3.12
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Run syntax check
+        run: |
+          echo "Checking syntax of all main.py files..."
+          find . -maxdepth 2 -name "main.py" -not -path "*/venv/*" -exec python -m py_compile {} +
+
+      - name: Verify all requirements.txt exist
+        run: |
+          echo "Verifying requirements.txt in all project directories..."
+          for dir in [0-9][0-9]-*; do
+            if [ -d "$dir" ]; then
+              if [ ! -f "$dir/requirements.txt" ]; then
+                echo "Error: $dir/requirements.txt is missing in $dir!"
+                exit 1
+              fi
+            fi
+          done
+
+      - name: Verify all project READMEs exist
+        run: |
+          echo "Verifying README.md in all project directories..."
+          for dir in [0-9][0-9]-*; do
+            if [ -d "$dir" ]; then
+              if [ ! -f "$dir/README.md" ]; then
+                echo "Error: $dir/README.md is missing in $dir!"
+                exit 1
+              fi
+            fi
+          done

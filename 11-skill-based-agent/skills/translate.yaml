@@ -1,0 +1,4 @@
+name: translate
+description: Translate text between languages
+prompt_template: "Translate the following to {target_language}: {input}"
+output_format: text

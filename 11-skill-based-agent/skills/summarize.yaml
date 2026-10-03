@@ -1,0 +1,4 @@
+name: summarize
+description: Summarize text or topics concisely
+prompt_template: "Summarize the following in 3-5 bullet points: {input}"
+output_format: bullet_points
