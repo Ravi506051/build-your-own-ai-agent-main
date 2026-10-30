@@ -93,3 +93,9 @@ Your support helps keep this tutorial series updated with the latest AI patterns
 
 [Back to top](#build-your-own-ai-agent)
 </div>
+
+## Local Repository Note
+
+This repository is maintained as a learning reference for studying AI-agent patterns. Before running an example, review its individual instructions and required environment variables. Keep API credentials in local environment files that are excluded from version control, and inspect tool permissions before allowing an agent to modify files or execute commands.
+
+When adapting an example, document your own changes separately from the upstream material and retain the original project's license and attribution requirements.
