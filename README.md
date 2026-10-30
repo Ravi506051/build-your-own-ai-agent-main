@@ -105,3 +105,9 @@ When adapting an example, document your own changes separately from the upstream
 Treat this repository as an agent-learning reference: inspect each example before running it, scope tool permissions, and keep API credentials outside version control.
 
 For reproducible updates, record the dataset or upstream version, environment and dependency versions, configuration, and actual outputs from each run. Keep illustrative examples clearly labelled and never commit credentials or private data.
+
+### Technical Deep Dive
+
+When adapting agent examples, make the control loop explicit: model response → validated tool call → tool result → next model step, with a maximum step count and clear stop conditions. Define typed schemas for tool arguments, validate them before execution, and keep tool implementations separate from the reasoning loop.
+
+Suggested engineering checks: use allowlisted tools, least-privilege credentials, timeouts, structured logs with secrets redacted, and human approval for destructive or external side effects. Execute untrusted code in a genuine isolated sandbox rather than assuming a normal subprocess is secure.
