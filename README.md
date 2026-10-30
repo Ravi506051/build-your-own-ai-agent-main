@@ -99,3 +99,9 @@ Your support helps keep this tutorial series updated with the latest AI patterns
 This repository is maintained as a learning reference for studying AI-agent patterns. Before running an example, review its individual instructions and required environment variables. Keep API credentials in local environment files that are excluded from version control, and inspect tool permissions before allowing an agent to modify files or execute commands.
 
 When adapting an example, document your own changes separately from the upstream material and retain the original project's license and attribution requirements.
+
+## Project Development Notes
+
+Treat this repository as an agent-learning reference: inspect each example before running it, scope tool permissions, and keep API credentials outside version control.
+
+For reproducible updates, record the dataset or upstream version, environment and dependency versions, configuration, and actual outputs from each run. Keep illustrative examples clearly labelled and never commit credentials or private data.
