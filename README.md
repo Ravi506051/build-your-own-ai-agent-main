@@ -111,3 +111,15 @@ For reproducible updates, record the dataset or upstream version, environment an
 When adapting agent examples, make the control loop explicit: model response → validated tool call → tool result → next model step, with a maximum step count and clear stop conditions. Define typed schemas for tool arguments, validate them before execution, and keep tool implementations separate from the reasoning loop.
 
 Suggested engineering checks: use allowlisted tools, least-privilege credentials, timeouts, structured logs with secrets redacted, and human approval for destructive or external side effects. Execute untrusted code in a genuine isolated sandbox rather than assuming a normal subprocess is secure.
+
+## Practical Engineering Notes
+
+This repository is useful for studying the building blocks behind tool-using agents. When extending an example, document the model/provider, tools available to the agent, state passed between steps, and the stopping condition.
+
+Recommended experiments:
+- Add structured input/output validation between planning and execution.
+- Log tool calls and errors without exposing API keys or private prompts.
+- Set execution timeouts and explicit limits on tool permissions.
+- Test successful tasks, invalid tool arguments, unavailable tools, and tasks that should stop early.
+
+Keep the original project attribution and license notices intact. Clearly distinguish personal modifications from upstream implementation.
