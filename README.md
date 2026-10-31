@@ -123,3 +123,11 @@ Recommended experiments:
 - Test successful tasks, invalid tool arguments, unavailable tools, and tasks that should stop early.
 
 Keep the original project attribution and license notices intact. Clearly distinguish personal modifications from upstream implementation.
+
+## Agent Architecture and Reliability
+
+- Keep planning, tool selection, tool execution, and response synthesis as separate stages where practical.
+- Define a narrow schema and validation rules for every tool input and output.
+- Apply permission checks before tools access files, networks, or external services.
+- Add bounded retries, timeouts, structured logs, and clear failure states to prevent uncontrolled agent loops.
+- Evaluate task completion, tool-call correctness, and safety on a fixed set of representative test tasks.
