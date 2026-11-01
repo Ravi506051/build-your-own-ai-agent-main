@@ -131,3 +131,9 @@ Keep the original project attribution and license notices intact. Clearly distin
 - Apply permission checks before tools access files, networks, or external services.
 - Add bounded retries, timeouts, structured logs, and clear failure states to prevent uncontrolled agent loops.
 - Evaluate task completion, tool-call correctness, and safety on a fixed set of representative test tasks.
+
+## Local Study Notes
+
+This repository is maintained upstream by its original authors. These notes are for local learning and experimentation; preserve upstream attribution and license terms when adapting the examples.
+
+When extending an agent pattern, document its state, available tools, stopping condition, and failure paths. Add tests for malformed tool arguments, tool timeouts, repeated calls, and empty model responses. Run generated code only in an isolated environment with explicit resource and filesystem limits.
