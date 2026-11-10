@@ -26,3 +26,10 @@ This repository is based on the upstream learning project. Preserve its original
 
 ## Maintainer's profile
 **Ravi Kumar Rao** · [GitHub](https://github.com/Ravi506051)
+
+## Engineering Review Checklist
+
+- Define the agent's goal, available tools, and stopping conditions before execution.
+- Validate tool inputs and outputs, and handle timeouts or tool failures explicitly.
+- Keep tool permissions narrow and require confirmation before consequential external actions.
+- Evaluate task completion, tool-call correctness, latency, and failure recovery using repeatable test cases.
